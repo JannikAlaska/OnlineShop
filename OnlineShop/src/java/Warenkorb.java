@@ -6,6 +6,7 @@
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 import java.util.ArrayList;
+import java.util.Collection;
 
 /**
  *
@@ -15,33 +16,21 @@ import java.util.ArrayList;
 @RequestScoped
 public class Warenkorb {
 
-    ArrayList cart = new ArrayList<String>();
+    private final Collection<Artikel> cart = new ArrayList<Artikel>();
     
     
     /**
      * Creates a new instance of Warenkorb
      */
     public Warenkorb() {
-            createCart();
+        cart.add(new Artikel("Brötchen", 0.25, 25));
+        cart.add(new Artikel("Kuchen", 1.20, 7));
+        cart.add(new Artikel("Brezeln", 0.70, 12));
     }
 
-    public String createCart (){
-        cart.add("Brötchen");
-        cart.add("Kuchen");
-        cart.add("Brezel");
-        
-        return cart.toString();
+    public Collection<Artikel> getWarenkorb(){
+        return cart;
     }
-
-    
-    public void addArticle (String newArticle){
-        cart.add(newArticle);
-    }
-    
-    public String getCart (){
-        String cartString = cart.toString();
-        return cartString;
-    }
-    
+ 
     
 }

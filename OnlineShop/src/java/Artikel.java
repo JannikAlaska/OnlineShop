@@ -1,33 +1,29 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/JSF/JSFManagedBean.java to edit this template
- */
-
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
-
-/* Dies ist eine Test-Änderung
-
-/**
- *
- * @author Administrator
- */
-@ManagedBean
-@RequestScoped
 public class Artikel {
-    String name = "Brötchen, normal";
-    /**
-     * Creates a new instance of Artikel
-     */
-    public Artikel() {
+    
+    private final String name;
+    private final Double preis;
+    private final int verfuegbar;
+    
+
+    public Artikel(String name, Double preis, int verfuegbar) {
+        this.name = name;
+        this.preis = preis;
+        this.verfuegbar = verfuegbar;
+        
+        
     }
     
     public String getName(){
-        return this.name;
+        return name;
     }
     
-    public void setName(String newName){
-        name = newName;
+    public Double getPreis(){
+        return preis;
     }
+        
+    public int getVerfuegbar(){
+        return verfuegbar;
+    }
+    
     
 }

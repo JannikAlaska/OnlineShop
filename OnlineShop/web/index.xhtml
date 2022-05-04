@@ -6,7 +6,12 @@
         <title>Facelet Title</title>
     </h:head>
     <h:body>
-        <h:outputText value = '#{warenkorb.cart}' />
+        <h1>Online-Shop</h1><br/>
+        <h:dataTable var="einArtikel" value="#{warenkorb.cart}">
+            <h:column><h:outputText value="#{einArtikel.name}"/></h:column>
+            <h:column><h:outputText value="#{einArtikel.preis}"/></h:column> 
+            <h:column><h:outputText value="#{einArtikel.verfuegbar}"/></h:column> 
+        </h:dataTable>
     </h:body>
 </html>
 
