@@ -28,8 +28,8 @@ public class Warenkorb {
         cart.add(new Artikel("Brezeln", 0.70, 12));
     }
 
-    public Collection<Artikel> getWarenkorb(){
-        return cart;
+    public Collection<Artikel> getCart(){
+        return this.cart;
     }
  
     
